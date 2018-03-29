@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>Thuật toán, Donald Knuth | HuuThanhDTD</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Có lần Donald Knuth nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được. Một trong những điểm đặc biệt của Knuth là ô">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Có lần Donald Knuth nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được. Một trong những điểm đặc biệt của Knuth là ô">
 <meta name="keywords" content="Thuật toán, Donald Knuth">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Thuật toán, Donald Knuth">
@@ -19,75 +18,126 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Thuật toán, Donald Knuth">
 <meta name="twitter:description" content="Có lần Donald Knuth nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được. Một trong những điểm đặc biệt của Knuth là ô">
-  
-    <link rel="alternate" href="/atom.xml" title="HuuThanhDTD" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Thuật toán, Donald Knuth</title>
+    <!-- styles -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss -->
+    
+    
 </head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">HuuThanhDTD</a>
-      </h1>
+<body class="max-width mx-auto px3">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/03/29/comment-code-story/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&text=Thuật toán, Donald Knuth"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&is_video=false&description=Thuật toán, Donald Knuth"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Thuật toán, Donald Knuth&body=Check out this article: http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&name=Thuật toán, Donald Knuth&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
       
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://huuthanhdtd.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Thuat-toan-Donald-Knuth" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/03/29/Thuat-toan-Donald-Knuth/" class="article-date">
-  <time datetime="2018-03-29T08:40:33.000Z" itemprop="datePublished">2018-03-29</time>
-</a>
+  </span>
+</div>
+
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="content index my4">
         
-  
-    <h1 class="article-title" itemprop="name">
-      Thuật toán, Donald Knuth
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Thuật toán, Donald Knuth
     </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">HuuThanhDTD</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-03-29T08:40:33.000Z" itemprop="datePublished">2018-03-29</time>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link" href="/tags/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a>
+    </div>
+
+
+    </div>
+  </header>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Có lần <a href="https://en.wikiquote.org/wiki/Donald_Knuth" target="_blank" rel="noopener">Donald Knuth</a> nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được.</p>
+  <div class="content" itemprop="articleBody">
+    <p>Có lần <a href="https://en.wikiquote.org/wiki/Donald_Knuth" target="_blank" rel="noopener">Donald Knuth</a> nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được.</p>
 <p>Một trong những điểm đặc biệt của Knuth là ông rất tỉ mỉ khi phân tích giải thuật. Tỉ mỉ đến từng đơn vị thời gian. Chính vì thế mà hầu hết code trong TAoCP của ông được viết trên MMIX, ngôn ngữ bậc rất thấp, vì với chương trình viết trên MMIX, ông có thể đếm được số lệnh cơ bản trong chương trình mà ông thiết kể để minh họa cho tính tối ưu của nó.</p>
 <p>Trong sách TAoCP (Vol 3) của ông có một ví dụ như thế này mà mình rất thích. Ở đây mình minh họa bằng C (mình phải thừa nhận rằng cách minh họa này không hay lắm, nhưng tìm cách minh họa giống với MMIX không dễ).</p>
 <p>Giả sử bạn có một danh sách liên kết có cấu trúc như sau:</p>
@@ -98,122 +148,96 @@
 <p>So với code trước, ta không cần phải check null cho con trỏ itr vì K luôn ở trong danh sách mới. Do đó tiết kiệm được N phép so sánh cho mỗi lần tìm kiếm không thành công (N là chiều dài của danh sách) trong khi đó chỉ mất thêm O(1) phép tính cho việc thêm và xóa nút khỏi danh sách.</p>
 <p>Enjoy!!!</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/" data-id="cjfc9ydtm0001ugt2xa5ilq7l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a></li></ul>
-
-    </footer>
   </div>
-  
-    
-<nav id="article-nav">
-  
-  
-    <a href="/2018/03/29/comment-code-story/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">コードは方法を語り、コメントは理由を語る</div>
-    </a>
-  
-</nav>
-
-  
 </article>
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a></li></ul>
+
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Thuat-toan-Donald-Knuth/" style="font-size: 10px;">Thuật toán, Donald Knuth</a>
-    </div>
-  </div>
+      <div id="footer-post-container">
+  <div id="footer-post">
 
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
+    <div id="nav-footer" style="display: none">
       <ul>
-        
-          <li>
-            <a href="/2018/03/29/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/29/comment-code-story/">コードは方法を語り、コメントは理由を語る</a>
-          </li>
-        
-          <li>
-            <a href="/2018/03/29/hello-world/">Hello World</a>
-          </li>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
         
       </ul>
     </div>
-  </div>
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2018 Jack N<br>
+    <div id="toc-footer" style="display: none">
+      
     </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&text=Thuật toán, Donald Knuth"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&is_video=false&description=Thuật toán, Donald Knuth"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Thuật toán, Donald Knuth&body=Check out this article: http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&title=Thuật toán, Donald Knuth"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/&name=Thuật toán, Donald Knuth&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Jack N
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects">Projects</a></li>
+        
+      </ul>
+    </nav>
   </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
-
-
-
-  </div>
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Disqus Comments -->
+
+
