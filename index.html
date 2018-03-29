@@ -62,6 +62,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Thuat-toan-Donald-Knuth" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/03/29/Thuat-toan-Donald-Knuth/" class="article-date">
+  <time datetime="2018-03-29T08:40:33.000Z" itemprop="datePublished">2018-03-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/29/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Có lần <a href="https://en.wikiquote.org/wiki/Donald_Knuth" target="_blank" rel="noopener">Donald Knuth</a> nói trong một lần phỏng vấn đại ý là ông chưa thấy một chương trình nào (của người khác) mà ông không làm cho nó nhanh hơn 10 lần được.</p>
+<p>Một trong những điểm đặc biệt của Knuth là ông rất tỉ mỉ khi phân tích giải thuật. Tỉ mỉ đến từng đơn vị thời gian. Chính vì thế mà hầu hết code trong TAoCP của ông được viết trên MMIX, ngôn ngữ bậc rất thấp, vì với chương trình viết trên MMIX, ông có thể đếm được số lệnh cơ bản trong chương trình mà ông thiết kể để minh họa cho tính tối ưu của nó.</p>
+<p>Trong sách TAoCP (Vol 3) của ông có một ví dụ như thế này mà mình rất thích. Ở đây mình minh họa bằng C (mình phải thừa nhận rằng cách minh họa này không hay lắm, nhưng tìm cách minh họa giống với MMIX không dễ).</p>
+<p>Giả sử bạn có một danh sách liên kết có cấu trúc như sau:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typdef <span class="class"><span class="keyword">struct</span> <span class="title">llnode</span> &#123;</span></span><br><span class="line">........<span class="keyword">int</span> key;</span><br><span class="line">........struct llnode *next;</span><br><span class="line">&#125; llnode;</span><br><span class="line"></span><br><span class="line">llnode *head;</span><br><span class="line">llnode *tail;</span><br></pre></td></tr></table></figure>
+<p>Giờ bạn muốn kiểm tra xem trong danh sách này có khóa K hay không. Bạn có lẽ sẽ làm như sau:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">llnode *itr = head;</span><br><span class="line"><span class="keyword">while</span>(itr != null)&#123;</span><br><span class="line">........<span class="keyword">if</span>(itr-&gt;key == K)&#123;</span><br><span class="line">................<span class="built_in">printf</span>(<span class="string">"%d is in the list"</span>, K);</span><br><span class="line">................<span class="keyword">break</span>;</span><br><span class="line">.........&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">................iter = itr-&gt;next;</span><br><span class="line">.........&#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Nhưng theo Knuth, chương trình này có thể làm nhanh hơn được. Nếu là bạn thì bạn sẽ làm thế nào?</p>
+<p>#Đáp án<br>Hãy dừng ở đây nếu bạn muốn suy nghĩ thử cách của mình rồi đọc đáp án sau nhé<br>Cách Knuth đề xuất là thêm vào cuối danh sách một nút mới có khóa K cần tìm (mất thời gian O(1)) (chú ý trong câu hỏi mình có để nút llnode *tail). Sau khi thêm vào rồi, code có thể viết lại như sau:<br><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">add a node of key K after tail;</span><br><span class="line">itr = head;</span><br><span class="line"><span class="keyword">while</span>(itr-&gt;key != K)&#123;</span><br><span class="line">........itr = itr-&gt;next</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(itr-&gt;next != null)&#123;</span><br><span class="line">.......<span class="built_in">printf</span>(<span class="string">"%d is in the list"</span>, K);</span><br><span class="line">&#125; </span><br><span class="line">remove the node after tail;</span><br></pre></td></tr></table></figure></p>
+<p>So với code trước, ta không cần phải check null cho con trỏ itr vì K luôn ở trong danh sách mới. Do đó tiết kiệm được N phép so sánh cho mỗi lần tìm kiếm không thành công (N là chiều dài của danh sách) trong khi đó chỉ mất thêm O(1) phép tính cho việc thêm và xóa nút khỏi danh sách.</p>
+<p>Enjoy!!!</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://huuthanhdtd.com/2018/03/29/Thuat-toan-Donald-Knuth/" data-id="cjfc9su1w0000y4t2yig1uh45" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-コードは方法を語り、コメントは理由を語る" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/03/29/コードは方法を語り、コメントは理由を語る/" class="article-date">
@@ -125,7 +173,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huuthanhdtd.com/2018/03/29/コードは方法を語り、コメントは理由を語る/" data-id="cjfc9nwpg0001ost2o4th796z" class="article-share-link">Share</a>
+      <a data-url="http://huuthanhdtd.com/2018/03/29/コードは方法を語り、コメントは理由を語る/" data-id="cjfc9su230003y4t23grui3gs" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +218,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://huuthanhdtd.com/2018/03/29/hello-world/" data-id="cjfc9nwp00000ost2km761waz" class="article-share-link">Share</a>
+      <a data-url="http://huuthanhdtd.com/2018/03/29/hello-world/" data-id="cjfc9su220001y4t2yvf8dfj1" class="article-share-link">Share</a>
       
       
     </footer>
@@ -190,9 +238,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Thuat-toan-Donald-Knuth/" style="font-size: 10px;">Thuật toán, Donald Knuth</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -209,6 +271,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/03/29/Thuat-toan-Donald-Knuth/">Thuật toán, Donald Knuth</a>
+          </li>
         
           <li>
             <a href="/2018/03/29/コードは方法を語り、コメントは理由を語る/">コードは方法を語り、コメントは理由を語る</a>
@@ -231,7 +297,6 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2018 Jack N<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
